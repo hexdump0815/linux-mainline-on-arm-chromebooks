@@ -2,10 +2,17 @@
 
 ## intro
 
+## supported devices and linux distributions
+
 ## enabling developer mode
+
+## setting gbb flags and enabling ccd
 
 ## different boot options: u-boot, kpart
 
-## supported devices and linux distributions
+## using and adjusting the bootable images
 
 ## other related projects
+
+- https://github.com/Maccraft123/Cadmium
+- https://github.com/eballetbo/chromebooks
