@@ -16,3 +16,8 @@
 
 - https://github.com/Maccraft123/Cadmium
 - https://github.com/eballetbo/chromebooks
+
+for intel chromebooks:
+
+- https://mrchromebox.tech/
+- https://galliumos.org/
