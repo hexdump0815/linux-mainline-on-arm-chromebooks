@@ -34,7 +34,7 @@ the following chromebook types are more or less supported:
 - chromebook gru:
   - asus chromebook c101 - bob
   - samsung chromebook plus - kevin - untested
-  - should run with the oak version above for now - maybe an own version will come later
+  - should run with the oak version above for now - maybe an own version will come later ...
 - chromebook kukui:
   - lenovo ideapad duet 10.1 chromebook - krane - wip
   - most probably many more in the future - see page below
@@ -51,6 +51,8 @@ the following chromebook types are more or less supported:
 ## using and adjusting the bootable images
 
 ## other related projects
+
+for arm chromebooks:
 
 - https://github.com/Maccraft123/Cadmium
 - https://github.com/eballetbo/chromebooks
