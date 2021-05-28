@@ -1,6 +1,8 @@
-# running linux mainline on arm chromebooks - coming soon ...
+# running linux mainline on arm chromebooks
 
 ## intro
+
+coming soon ...
 
 ## supported devices and linux distributions
 
@@ -44,11 +46,19 @@ the following chromebook types are more or less supported:
 
 ## enabling developer mode
 
+coming soon ...
+
 ## setting gbb flags and enabling ccd
+
+coming soon ...
 
 ## different boot options: u-boot, kpart
 
+coming soon ...
+
 ## using and adjusting the bootable images
+
+coming soon ...
 
 ## other related projects
 
