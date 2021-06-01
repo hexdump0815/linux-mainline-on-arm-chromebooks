@@ -53,9 +53,9 @@ the following chromebook types are more or less supported:
 
 ## enabling developer mode
 
-in order to boot anything else than chromeos on a chromebook one needs to enable developer mode for it. a few things related to enabling developer mode are important to know: first - in the process all data saved locally on the chromebook will be deleted, so important data should be backed up first - and second - in developer mode some of the advanced security features of chromeos are not enabled anymore. some more information about the developer mode and how to enable it on different devices can be found here: https://chromium.googlesource.com/chromiumos/docs/+/master/developer_mode.md
+in order to boot anything else than chromeos on a chromebook one needs to enable the developer mode for it. a few things related to enabling the developer mode are important to know: first - in the process all data saved locally on the chromebook will be deleted, so important data should be backed up first - and second - in developer mode some of the advanced security features of chromeos are not enabled anymore. some more information about the developer mode and how to enable it on different devices can be found here: https://chromium.googlesource.com/chromiumos/docs/+/master/developer_mode.md
 
-on a normal chromebook with a build in keyboard the following procedure will initiate the switch to developer mode (see: https://chromium.googlesource.com/chromiumos/docs/+/master/debug_buttons.md#firmware-keyboard-interface):
+on a normal chromebook with a built in keyboard the following procedure will initiate the switch to developer mode (see: https://chromium.googlesource.com/chromiumos/docs/+/master/debug_buttons.md#firmware-keyboard-interface):
 
 - esc + refresh (the round circle button) and press power (the power on button on the right)
 - ctrl d
@@ -80,7 +80,7 @@ afterwards preparing everything for booting from sd card or usb looks like this 
 - reboot
 - ctrl u (to boot from sd card at the first initial screen after reboot)
 
-now the chromebook should be able to boot one of the bootable images provided here for the corresponding device type and wirtten properly to an sd card or usb disk. for writing disk images to such a medium there is plenty information available on the web for how to do it on the different operating systems.
+now the chromebook should be able to boot one of the bootable images provided here for the corresponding device type and wirtten properly to an sd card or usb disk. for writing disk images to such a medium there is plenty of information available on the web about how to do it on the different operating systems.
 
 ## setting gbb flags and enabling ccd
 
