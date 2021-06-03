@@ -57,7 +57,7 @@ in order to boot anything else than chromeos on a chromebook one needs to enable
 
 on a normal chromebook with a built in keyboard the following procedure will initiate the switch to developer mode (see: https://chromium.googlesource.com/chromiumos/docs/+/master/debug_buttons.md#firmware-keyboard-interface):
 
-- esc + refresh (the round circle button) and press power (the power on button on the right)
+- esc + refresh (the round circle button) and press power button
 - ctrl d
 - enter (to accept)
 - it will take around 10 minutes to do the switch
