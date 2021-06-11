@@ -19,8 +19,10 @@ the following chromebook types are more or less supported:
 
 - chromebook snow:
   - samsung chromebook xe303c12 - snow - rev4 and rev5
-  - hp chromebook 11 g1 - spring - wip
   - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_snow/readme.md
+- chromebook spring:
+  - hp chromebook 11 g1 - spring - wip
+  - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_spring/readme.md
 - chromebook peach:
   - samsung chromebook xe503c12 - peach-pit
   - samsung chromebook xe503c32 - peach-pi - untested
