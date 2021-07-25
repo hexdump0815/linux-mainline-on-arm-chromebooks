@@ -154,6 +154,14 @@ for arm chromebooks:
 - https://github.com/eballetbo/chromebooks
 - https://github.com/SolidHal/PrawnOS
 
+for other arm laptops:
+
+- https://github.com/aarch64-laptops/debian-cdimage - snapdragon 845 (lenovo yoga c630 [not the c630 chromebook!], lenovo flex 5g)
+- https://github.com/aarch64-laptops/build - snapdragon 835 (asus novago tp370ql, hp envy x2, lenovo miix 630) - not much happening there anymore
+- https://wiki.pine64.org/wiki/Pinebook_Pro - rockchip rk3399 based
+- https://wiki.pine64.org/wiki/Pinebook- allwinner a64 based
+- https://wiki.pine64.org/wiki/PineTab - allwinner a64 based
+
 for intel chromebooks:
 
 - https://mrchromebox.tech/
