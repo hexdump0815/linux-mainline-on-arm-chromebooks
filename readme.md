@@ -164,5 +164,6 @@ for other arm laptops:
 
 for intel chromebooks:
 
+- https://github.com/hexdump0815/linux-mainline-on-intel-chromebooks/
 - https://mrchromebox.tech/
 - https://galliumos.org/
