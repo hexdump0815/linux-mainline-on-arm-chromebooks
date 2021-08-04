@@ -11,9 +11,11 @@ there are most probably three (maybe even more) reasons why one wants to run a r
 
 what you will find here is the try to support many of those arm chromebooks to some (and hopefully increasing) degree by providing disk images one can simply write to an sd card and run them from there (i.e. even while initially keeping chromeos on the device). at the beginning the focus will be to somehow cover as many of them as possible with a basic system, i.e. some useful x11 (with wayland as an option) desktop setup and extend the functionality step by step from there (i.e. trying to add things like accelerated video playback or add sound support where it is still missing etc.). in the current state most of the supported chromebooks are somehow useable for people with linux know how, but i would not yet recommend them for typical end users who expect everything to work well and out of the box (this will hopefully change over time). this is a slowly evolving spare time project, so please do not expect wonders and things will take time, but it will steadily move forward. the detailed current state for the different arm chromebooks can be found at the corresponding links below. the snapdragon 7180c based ones are not yet supported by the imagebuilder framework used here yet (as i do not have such hardware as of now - donations are welcome :) ), but there is some support for them in cadmium - a project with a similar but also slightly different focus on getting mainline linux onto arm chromebooks - see the link at the bootom of this page. there are also some more links to other similar projects.
 
+i'm open for generally useful suggestions and tested pull requests. i'm not so interested in very special feature requests ("please add this very uncommon driver to the kernel" or similar) or untested suggestions. instead i would like to encourage people to for instance build their own kernels or maybe even images - its not that complicated and all information should be around spread across a few repositories here in a more or less readable format. for reports of success or failure with the images provided and everything else please create github issues. one thing is important to keep in mind: the most effort goes into trying to make sure that everything at least somehow works in the end and the least effort is required to get new ideas what can be done or added - i actually already have a very long list of things i would like to add :)
+
 ## supported devices and linux distributions
 
-currently xubuntu 20.04 (focal) is supported and debian 11 (bullseye) is planned to be supported a bit after it is officially released.
+currently xubuntu 20.04 (focal) and debian 11 (bullseye) are supported.
 
 the following chromebook types are more or less supported:
 
@@ -45,7 +47,7 @@ the following chromebook types are more or less supported:
 - chromebook gru:
   - asus chromebook c101 - bob
   - samsung chromebook plus - kevin - untested
-  - should run with the oak version above for now - maybe an own version will come later ...
+  - should run with the oak version above for now - maybe an own version will come later ... also check the cadmium project link at the bottom of this page, it also has good gru support
 - chromebook kukui:
   - lenovo ideapad duet 10.1 chromebook - krane - wip
   - most probably many more in the future - see page below
@@ -140,11 +142,30 @@ it seems to be possible to do a similar cleanup of the intial developer mode scr
 
 ## different boot options: u-boot, kpart
 
-coming soon ...
+there are two boot strategies used in the arm chromebook bootable images: chainloaded u-boot and native chromeos kpart kernels. actually there is the third options to install an self built low level libreboot or coreboot bootloader, but this options is quite complicated, risky and not supported for many arm chromebooks and thus not used and discussed here.
+
+booting via chainloaded u-boot is used by images for the 32bit armv7l chromebooks. here the low level bootloader is loading u-boot (another very common bootloader for arm systems) instead of the linux kernel and u-boot then will load the actual kernel. the advantage of this setup is that it is possible to create boot menus for selecting different kernels etc.
+
+the native chromeos kpart booting works by packaging the used mainline kernel in the same way the regular chromeos kernel is packaged (kpart - i.e. the format for the kernel partition) and putting it this way into the kernel partition, so that the chromebook will boot it just like a regular chromeos kernel. this approached is used for the 64bit aarch64 chromebooks as there is no mainline u-boot available for them, which could be chainloaded. the disadvantages of this approach are that the resulting kernel image can be at max 32mb in size (16mb for 32bit armv7l systems) which can be quite small for systems with initrd and that the kernel cmdline args are fixed built into this kernel image and thus it is not very flexible. the advantage of this approach is that such a kernel image can contain multiple dtb files for different hardware and the proper one will be selected automatically at boot. an important feature of chromeos kernel partitions is that there might be multiple of them and they can be given a priority and a counter for failed boots which to some degree gives the opportunity for relatively failsafe test booting of new kernels without the risk of completely bricking a system. the bootable images discussed here for this reason have two kernel partitions of which only the first is currently used right now - the second one os there for test booting other kernels if done with the proper settings.
 
 ## using and adjusting the bootable images
 
-coming soon ...
+the bootable images discussed here can either be bootable directly without any further changes after writing the image to an sd card or usb disk (important side note: not all chromebooks can boot from both media - some can only boot from sd card, on some not all usb connectors are bootable and not all chromebooks have an sd card slot at all). for some of the images some extra steps are required to adjust the image for a specific model of the supprted hardware - those additional steps are usually described in the system specific readme and they are usually one or both of the following: adjusting the dtb file in the extlinux.conf boot configuration file or installing the proper u-boot version. the extlinux.conf file can be found in the "extlinux" directory of the third partition (boot) of the written image and is a simple text file which usually contains some comments on what might require adjustment. alternative u-boot versions can be found in the "extra" directory of the same partition and are written with the dd command to the first partition (the primary kernel partition).
+
+## storing chromebooks and avoiding battery drain
+
+maybe the following situations seem familiar when dealing with chromebooks: a chromebook was fully charged and not used for a while and afterwards the battery is already fully discharged - or - a chromebook is turned off and put into a shelf, maybe on top of another laptop or similar device and a moment later it turned on again on its own or a day later the battery is completely discharged.
+
+the reason for the first situation is that even if a chromebook is turned off the embedded controller is still running in some low power mode and thus draining the battery slowly until it is empty after a few weeks or months usually. this happens as chromebooks usually do not have those small extra bios batteries other systems often have to keep components like an embedded controller or real time clock alive when they are powered off.
+
+the second situation comes from the fact that chromebooks often have small magnetic sensors for sensing the opening of the lid (which has a corresponding small magnet on it) to power them on in this case. those magnetic sensors can easily get confused by other strong magnets (for instance from another laptop) and as a result the chromebook will power on even if the lid has not really been opened. if this stays unnoticed it might run then until the battery gets drained i nthe worst case.
+
+a way to avoid such situations when storing a chromebook for a longer time while not using it is a special mode most newer chromebooks can be put into to avoid such behaviour: the battery disconnect mode. it looks like it seems to be available for most chromebooks with a built in keyboard built after around 2014/2015 - older models do not seem to support it. to enter this mode the refresh button (the one in the top row with the round circle) has to be pressed for a few seconds together with the power button while the charger is connected and then the charger has to be removed while still pressing those buttons together. afterwards the chromebook will not power on anymore neither by pressing the power button nor by opening the lid. it can then be stored for a very long time with only very minimal battery drain. sadly i'm not aware of something similar for tablet style chromebooks like the lenovo duet (krane) - in case anyone knows something similar for those, please let me know.
+
+some usefule links regarding those topics:
+
+- https://support.google.com/chrome/a/answer/9139543?hl=en
+- https://community.acer.com/en/kb/articles/23-chromebook-may-turn-on-automatically-when-placed-on-top-of-another-chromebook
 
 ## other related projects
 
