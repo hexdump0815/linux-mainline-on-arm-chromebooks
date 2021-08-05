@@ -165,7 +165,7 @@ a way to avoid such situations when storing a chromebook for a longer time while
 some usefule links regarding those topics:
 
 - https://support.google.com/chrome/a/answer/9139543?hl=en
-- https://chromium.googlesource.com/chromiumos/docs/+/master/debug_buttons.md
+- https://chromium.googlesource.com/chromiumos/docs/+/HEAD/debug_buttons.md
 - https://community.acer.com/en/kb/articles/23-chromebook-may-turn-on-automatically-when-placed-on-top-of-another-chromebook
 
 ## other related projects
