@@ -175,6 +175,7 @@ for arm chromebooks:
 - https://github.com/Maccraft123/Cadmium
 - https://github.com/eballetbo/chromebooks
 - https://github.com/SolidHal/PrawnOS
+- https://github.com/amstan/PKGBUILDs/commit/linux-chromeos
 
 for other arm laptops:
 
