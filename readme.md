@@ -92,7 +92,7 @@ it is possible to set parameters like the above to enable booting from usb also 
 
 the problem with this is that it is not really that easy as chromebooks have by default some form of write protection enabled for the area of the firmware where those gbb flags are stored as part of the chromeos security setup. disabling this write protection requires opening the chromebook and removing a certain screw (in most cases) or metallic sticker (for instance in case of the snow chromebook), which is bridging some contacts to keep the write protection active. a search on the internet should bring up a lot of information about where to find this special screw for different chromebook types and how this screw usually looks like (for the ones without explicit documentation). this method to enable/disable the write protection was used on all older chromebooks, but all newer ones do it in a different way which does not longer require the device to be opened, but requires a special usb-c cable to disable the write protection - the suzyqable - instead. this cable has on top of that a few other nice use cases: it provides access to the serial console of the chromebook, to the ec firmware console and to the so called cr50 console. all this together is called 'ccd' for closed case debugging. if a certain chromebook supports ccd can be seen in the last column of this table: https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices - more information about how to disable the write protection via suzyqable on supported systems can be found here: https://wiki.mrchromebox.tech/Firmware_Write_Protect#Disabling_WP_on_CR50_Devices_via_CCD
 
-after following the mrchromebox guide from above to open the ccd, the following commands given at the ccd prompt will ensure maximum openness and least risk of not being able to get out of a bricked situation:
+after following the mrchromebox guide from above to open the ccd, the following commands given at the ccd prompt will ensure maximum openness and least risk of not being able to get out of a bricked situation (but please be aware that this will give quite a bit of power to everyone having physical access to the device):
 - wp false
 - wp false atboot
 - ccd reset factory
@@ -147,7 +147,17 @@ on older chromebooks (at least the 32bit versions) it is also possible to replac
 - write back the modified flash file via 'flashrom -w bios.bin'
 - now you can continue with the re-enabling of the write protection as described above
 
-it seems to be possible to do a similar cleanup of the intial developer mode screen on newer devices as well according to https://www.reddit.com/r/chromeos/comments/hbajeg/bios_bitmaps_question/fv8uncy/ - i never tried or tested this approach yet ... so try it at your own risk and please report it back as an issue to this github repo in case it works :)
+it seems to be possible to do a similar cleanup of the intial developer mode screen on newer devices as well according to https://www.reddit.com/r/chromeos/comments/hbajeg/bios_bitmaps_question/fv8uncy/ - i tried it on an elm chromebook and it worked using the following commands:
+
+- cd /tmp
+- flashrom -p host -r bios.bin
+- cp bios.bin bios.bin.org
+- cbfstool bios.bin extract -n vbgfx.bin -f vbgfx.bin.org
+- cbfstool bios.bin remove -n vbgfx.bin
+- flashrom -p host -w bios.bin
+
+it is a good idea to put the bios.bin.org and vbgfx.bin.org to a safe place in case one wants to revert the changes one day (i did not really like the result and actually reverted it back to the original state by flashing back the bios.bin.org). maybe it is even possible to replace the default bitmaps with custom own ones similar to how it is described at https://jcs.org/2016/08/26/openbsd_chromebook for the old gbb bitmaps.
+
 
 ## different boot options: u-boot, kpart
 
