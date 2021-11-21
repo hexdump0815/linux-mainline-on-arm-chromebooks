@@ -9,7 +9,7 @@ there are most probably three (maybe even more) reasons why one wants to run a r
 - even for chromebooks which are still supported by chromeos there might be a reason to use them with a real mainline linux system instead or in parallel: in case one wants to say good bye to googles interest to track its users and to collect a lot of information on how they are using their chromebook etc., which is unavoidable if used with chromeos (even after adjusting the privacy settings etc. there will still be a lof of informatoion tracked and collected).
 - the third reason why this might be interesting is if one wants to run linux on a laptop with an arm processor and not an intel one. there are only a few laptops easily available with arm cpus which can be used with linux: the pinebook pro comes into mind or maybe some of those windows laptops with arm cpus - the first (while being a very nice option in general with a very vivid community around it) is quite limited performance wise (old rk3399 soc), does not have the best build quality (strange noise from the speakers for instance) and is sometimes not easy to get - the latter, while promising quite a good performance, are still very complicated to setup and usually are not really available in the lower price ranges. here the newer 64bit arm chromebooks fit in quite nicely, as they usally have relatively modern hardware, good build quality and are easily available at rather low prices (even more if one gets them used and there seems to be a large used marked for them): the mediatek mt8173 ones are quite well supported, have a performance similar to that of the pinebook pro, but there is no support for opengl acceleration via its (powervr) gpu - the mediatek mt8183 ones have a better performance and better energy efficiency than the pinebook pro, the gpu is supported by the open source panfrost driver in mesa, but they are still a bit work in progress right now - the snapdragon 7180c ones are maybe slightly faster than the mt8183 ones (but not much), they have a well suppored gpu (via the open source freedreno mesa driver), but are also still very much work in progress in general and some of their hardware seems to require quite a mess of binary blobs to work - and there are the rockchip rk3399 based ones, which use the same soc as the pinebook pro, are quite well supported (including the gpu via the open source panfrost mesa driver) and usually have a very good build quality
 
-what you will find here is the try to support many of those arm chromebooks to some (and hopefully increasing) degree by providing disk images one can simply write to an sd card and run them from there (i.e. even while initially keeping chromeos on the device). at the beginning the focus will be to somehow cover as many of them as possible with a basic system, i.e. some useful x11 (with wayland as an option) desktop setup and extend the functionality step by step from there (i.e. trying to add things like accelerated video playback or add sound support where it is still missing etc.). in the current state most of the supported chromebooks are somehow useable for people with linux know how, but i would not yet recommend them for typical end users who expect everything to work well and out of the box (this will hopefully change over time). this is a slowly evolving spare time project, so please do not expect wonders and things will take time, but it will steadily move forward. the detailed current state for the different arm chromebooks can be found at the corresponding links below. the snapdragon 7180c based ones are not yet supported by the imagebuilder framework used here yet (as i do not have such hardware as of now - donations are welcome :) ), but there is some support for them in cadmium - a project with a similar but also slightly different focus on getting mainline linux onto arm chromebooks - see the link at the bootom of this page. there are also some more links to other similar projects.
+what you will find here is the try to support many of those arm chromebooks to some (and hopefully increasing) degree by providing disk images one can simply write to an sd card and run them from there (i.e. even while initially keeping chromeos on the device). at the beginning the focus will be to somehow cover as many of them as possible with a basic system, i.e. some useful x11 (with wayland as an option) desktop setup and extend the functionality step by step from there (i.e. trying to add things like accelerated video playback or add sound support where it is still missing etc.). in the current state most of the supported chromebooks are somehow useable for people with linux know how, but i would not yet recommend them for typical end users who expect everything to work well and out of the box (this will hopefully change over time). this is a slowly evolving spare time project, so please do not expect wonders and things will take time, but it will steadily move forward. the detailed current state for the different arm chromebooks can be found at the corresponding links below. there are also some more links to other similar projects.
 
 i'm open for generally useful suggestions and tested pull requests. i'm not so interested in very special feature requests ("please add this very uncommon driver to the kernel" or similar) or untested suggestions. instead i would like to encourage people to for instance build their own kernels or maybe even images - its not that complicated and all information should be around spread across a few repositories here in a more or less readable format. for reports of success or failure with the images provided and everything else please create github issues. one thing is important to keep in mind: the most effort goes into trying to make sure that everything at least somehow works in the end and the least effort is required to get new ideas what can be done or added - i actually already have a very long list of things i would like to add :)
 
@@ -38,22 +38,27 @@ the following chromebook types are more or less supported:
   - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_veyron/readme.md
 - chromebook nyan:
   - acer chromebook cb5 311 - nyan big
+  - acer chromebook 13 c810 - nyan big
+  - hp chromebook 14 g3 - nyan blaze
   - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_nyan/readme.md
+- chromebook gru:
+  - asus chromebook c101 - bob
+  - samsung chromebook plus - kevin
+  - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_gru/readme.md
 - chromebook oak:
   - lenovo chromebook n23 - hana
   - acer chromebook r13 - elm
   - most probably many more - see page below
   - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_oak/readme.md
-- chromebook gru:
-  - asus chromebook c101 - bob
-  - samsung chromebook plus - kevin - untested
-  - should run with the oak version above for now - maybe an own version will come later ... also check the cadmium project link at the bottom of this page, it also has good gru support
 - chromebook kukui:
-  - lenovo ideapad duet 10.1 chromebook - krane - wip
-  - most probably many more in the future - see page below
+  - lenovo ideapad duet 10.1 chromebook - krane
+  - acer chromebook spin cp311-3h - juniper
+  - most probably many more - see page below
   - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_kukui/readme.md
 - chromebook trogdor:
-  - will maybe be added at some time in the future ... meanwhile check the cadmium project link at the bottom of this page
+  - acer chromebook spin sp513-1h - lazor
+  - most probably many more - see page below
+  - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_trogdor/readme.md
 
 ## enabling developer mode
 
