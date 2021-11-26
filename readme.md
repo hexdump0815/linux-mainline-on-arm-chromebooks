@@ -132,6 +132,7 @@ back to the gbb flags ... lets assume the write protection has been disabled in 
 - it should be disabled now (this will only work if the hardware write protection has been disabled beforehand)
 - read the firmware from the flash into a file 'bios.bin' via the command 'flashrom -r bios.bin'
 - it is a good idea to copy this file to a safe place outside of the chromebook now (sd card, usb stick etc.) to have a copy of the original unmodified firmware around just in case ...
+- note: in case the boot screen should be changed as well (see below) it might be a good idea to do this first to avoid resetting the changed gbb settings again then
 - set the desired gbb flags via the command '/usr/share/vboot/bin/set_gbb_flags.sh 0x19'
 - the meaning of the flags is (their sum is 0x19):
   - GBB_FLAG_DEV_SCREEN_SHORT_DELAY 0x00000001 - initial boot screen only for 2 seconds instead of the default 30 seconds and no beep afterwards
@@ -150,6 +151,7 @@ on older chromebooks (at least the 32bit versions) it is also possible to replac
 - create an empty boot bitmap file via 'touch nothing'
 - write this empty boot bitmap into the flash file via 'gbb_utility -s --bmpfv=nothing bios.bin'
 - write back the modified flash file via 'flashrom -w bios.bin'
+- to be on the safe side maybe redo the gbb flag settings from above as it might have been undone in case the bios.bin file was read before the gbb flags were set
 - now you can continue with the re-enabling of the write protection as described above
 
 it seems to be possible to do a similar cleanup of the intial developer mode screen on newer devices as well according to https://www.reddit.com/r/chromeos/comments/hbajeg/bios_bitmaps_question/fv8uncy/ - i tried it on an elm chromebook and it worked using the following commands:
