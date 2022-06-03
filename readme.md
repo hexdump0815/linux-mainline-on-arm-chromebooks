@@ -1,5 +1,7 @@
 # running linux mainline on arm chromebooks
 
+![kappa and juniper with velvet](https://github.com/hexdump0815/linux-mainline-on-arm-chromebooks/raw/master/images/kappa-and-juniper-with-velvet.jpg "kappa and juniper with velvet")
+
 ## intro
 
 this is about running a real mainline linux system on arm chromebooks, so no chromeos and this is not about intel chromebooks - for those please have a look at the intel related links at the bottom of this page, those should help you getting a real linux running on them.
