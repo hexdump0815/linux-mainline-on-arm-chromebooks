@@ -216,6 +216,7 @@ for other arm laptops:
 - https://github.com/aarch64-laptops/debian-cdimage/issues/16 - samsung galaxy book s - wip
 - https://github.com/aarch64-laptops/debian-cdimage/issues/21 - samsung galaxy book go - wip, not much happening there anymore
 - https://github.com/ironrobin/archiso-x13s/wiki/Feature-Support - lenovo thinkpad x13s status
+- https://asahilinux.org/ - linux mainline on apple m1 hardware
 - https://wiki.pine64.org/wiki/Pinebook_Pro - rockchip rk3399 based
 - https://wiki.pine64.org/wiki/Pinebook- allwinner a64 based
 - https://wiki.pine64.org/wiki/PineTab - allwinner a64 based
