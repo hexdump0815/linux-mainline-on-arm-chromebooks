@@ -52,17 +52,23 @@ the following chromebook types are more or less supported:
 - chromebook oak:
   - lenovo chromebook n23 - hana
   - acer chromebook r13 - elm
-  - most probably many more - see page below
+  - lenovo chromebook 300e (mt8173 version) - hana
+  - and many many more - see page below
   - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_oak/readme.md
 - chromebook kukui:
   - lenovo ideapad duet 10.1 chromebook - krane
   - acer chromebook spin cp311-3h - juniper
   - hp chromebook 11a - kappa
+  - lenovo ideapad 3 chromebook 14 inch (mt8183 version) - fennel14
+  - lenovo ideapad flex 3 chromebook (mt8183 version) - fennel
+  - asus chromebook flip cm3 (mt8183 version) - damu
+  - asus chromebook cm3 - kakadu
+  - acer chromebook 314 (cb314-2h/cb314-2ht) - cozmo
   - and many many more - see page below
   - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_kukui/readme.md
 - chromebook trogdor:
   - acer chromebook spin sp513-1h - lazor
-  - hp chromebook x2 - coachz
+  - hp chromebook x2 (snapdragon 7c version) - coachz
   - lenovo ideapad duet 5 chromebook - homestar
   - lenovo ideapad duet 3 chromebook - wormdingler
   - https://github.com/hexdump0815/imagebuilder/blob/main/systems/chromebook_trogdor/readme.md
