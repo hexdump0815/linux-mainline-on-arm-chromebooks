@@ -155,6 +155,8 @@ back to the gbb flags ... lets assume the write protection has been disabled in 
 - it is a good idea to copy this file to a safe place outside of the chromebook now (sd card, usb stick etc.) to have a copy of the original unmodified firmware around just in case ...
 - note: in case the boot screen should be changed as well (see below) it might be a good idea to do this first to avoid resetting the changed gbb settings again then
 - set the desired gbb flags via the command '/usr/share/vboot/bin/set_gbb_flags.sh 0x19'
+- it looks like in newer chromeos versions (around 112+ or so) one should use 'futility gbb --set --flash --flags=0x19' instead (but the old command from above seems to still work as well)
+- the current gbb flags can be checked via the command '/usr/share/vboot/bin/get_gbb_flags.sh' (newer version: 'futility gbb --get --flash --flags')
 - the meaning of the flags is (their sum is 0x19):
   - GBB_FLAG_DEV_SCREEN_SHORT_DELAY 0x00000001 - initial boot screen only for 2 seconds instead of the default 30 seconds and no beep afterwards
   - GBB_FLAG_FORCE_DEV_SWITCH_ON 0x00000008 - keep developer mode enabled by default
