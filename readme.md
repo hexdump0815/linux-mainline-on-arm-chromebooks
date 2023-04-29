@@ -229,6 +229,14 @@ some usefule links regarding those topics:
 - https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/aee6bd69fefac653cfc4a5679eb387d7c3280d14
 - https://chromium.googlesource.com/chromiumos/platform/memento_softwareupdate/+/3c7204287bbc8f4341f546857216389bdff58e51/battery_cutoff/battery_cutoff.sh#213
 
+## some useful links about chromebooks, chromeos versions, recovery images etc.
+
+- list of existing chromebooks (not 100% complete): https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/
+- list of intel chromebooks supported by mrchromebox.tech alertnative bios firmware - via those one can get an idea which method might have been used at a certain time for the flash write protection (wp-method column): https://mrchromebox.tech/#devices
+- a lot of information about chromeos versions, recovery images etc. for chromebooks by type: https://cros.tech/
+- chromeos update tracker: https://www.flagthis.com/updates
+- find out liunx kernel version on a certain chromebook and chromeos version: https://github.com/jay0lee/chromeos-update-directory and https://www.reddit.com/r/chromeos/comments/w38h7i/source_code_defining_kernel_version_by/
+
 ## other related projects
 
 for arm chromebooks:
