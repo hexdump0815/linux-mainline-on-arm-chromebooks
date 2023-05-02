@@ -236,6 +236,7 @@ some usefule links regarding those topics:
 - a lot of information about chromeos versions, recovery images etc. for chromebooks by type: https://cros.tech/
 - chromeos update tracker: https://www.flagthis.com/updates
 - find out liunx kernel version on a certain chromebook and chromeos version: https://github.com/jay0lee/chromeos-update-directory and https://www.reddit.com/r/chromeos/comments/w38h7i/source_code_defining_kernel_version_by/
+- how to build your own suzyqable: https://www.youtube.com/watch?v=WGsyXlgSxFk and https://chromium.googlesource.com/chromiumos/third_party/hdctools/+/HEAD/docs/ccd.md#making-your-own-suzyq
 
 ## other related projects
 
