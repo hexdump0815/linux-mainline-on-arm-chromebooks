@@ -104,13 +104,23 @@ for more tablet style chromebooks without a fixed keyboard (like the lenovo duet
 afterwards preparing everything for booting from sd card or usb looks like this by going to the command prompt (see: https://chromium.googlesource.com/chromiumos/docs/+/master/developer_mode.md#shell):
 
 - ctl alt ->
-- login as user chronos (no password required)
+- login as user chronos (no password required - alternatively the user root can be used at least in newer chromeos versions and that one does not require the sudo command from the next line)
 - sudo su (to become root)
 - crossystem dev_boot_usb=1 dev_boot_signed_only=0
 - reboot
 - ctrl u (to boot from sd card at the first initial screen after reboot)
 
 now the chromebook should be able to boot one of the bootable images provided here for the corresponding device type and wirtten properly to an sd card or usb disk. for writing disk images to such a medium there is plenty of information available on the web about how to do it on the different operating systems.
+
+## updating to the latest chromeos version without going through the initial login procedure
+
+in case someone wants to update chromeos to the latest version on a new or freshly reset into developer mode chromebook without having to go through the initial login and setup sequence, then it should work like this:
+
+- connect some chromebook supported usb ethernet adapter to have network for downloading the update (as no wifi is setup without the login sequence - maybe one can connect to wifi using the regular initial setup routine only iup to that point before starting the below procedure - not tested yet if this would work)
+- ctrl-alt-f2 and then login as root (or user chronos and the sudo command from above - see last section for details about this step)
+- run: update_engine_client --update
+- wait a while (it can take a few minutes with not that much output during that time) and reboot when it fished
+- maybe repeat the procedure in case more multiple update levels are required
 
 ## setting gbb flags, enabling ccd and the magic suzyqable
 
@@ -237,6 +247,7 @@ some usefule links regarding those topics:
 - chromeos update tracker: https://www.flagthis.com/updates
 - find out liunx kernel version on a certain chromebook and chromeos version: https://github.com/jay0lee/chromeos-update-directory and https://www.reddit.com/r/chromeos/comments/w38h7i/source_code_defining_kernel_version_by/
 - how to build your own suzyqable: https://www.youtube.com/watch?v=WGsyXlgSxFk and https://chromium.googlesource.com/chromiumos/third_party/hdctools/+/HEAD/docs/ccd.md#making-your-own-suzyq
+- suzyqable alternative to buy in case this is preferred over building your own: https://github.com/ChocolateLoverRaj/gsc-debug-board (not verified myself, but someone else reported those devices working on irc: https://oftc.irclog.whitequark.org/aarch64-laptops/2023-11-13#32665252)
 
 ## other related projects
 
