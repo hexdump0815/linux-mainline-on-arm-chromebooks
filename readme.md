@@ -110,11 +110,7 @@ afterwards preparing everything for booting from sd card or usb looks like this 
 - reboot
 - ctrl u (to boot from sd card at the first initial screen after reboot)
 
-now the chromebook should be able to boot one of the bootable images provided here for the corresponding device type and wirtten properly to an sd card or usb disk. for writing disk images to such a medium there is plenty of information available on the web about how to do it on the different operating systems. After booting into the image, you can expand the root partition using `/scripts/extend-rootfs.sh`.
-
-
-
-
+now the chromebook should be able to boot one of the bootable images provided here for the corresponding device type and written properly to an sd card or usb disk. for writing disk images to such a medium there is plenty of information available on the web about how to do it on the different operating systems. After booting into the image, you can expand the root partition using `/scripts/extend-rootfs.sh`.
 
 ## updating to the latest chromeos version without going through the initial login procedure
 
