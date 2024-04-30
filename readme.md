@@ -198,6 +198,19 @@ it seems to be possible to do a similar cleanup of the intial developer mode scr
 
 it is a good idea to put the bios.bin.org and vbgfx.bin.org to a safe place in case one wants to revert the changes one day (i did not really like the result and actually reverted it back to the original state by flashing back the bios.bin.org). maybe it is even possible to replace the default bitmaps with custom own ones similar to how it is described at https://jcs.org/2016/08/26/openbsd_chromebook for the old gbb bitmaps. after looking closer at this it looks like this is more complex than initially expected - see: https://github.com/hexdump0815/imagebuilder/blob/61a5297fde1431bf28ff390aeabe6b4eab52f223/todo.txt#L9-L14
 
+in case someone wants to ccd lock and ccd unlocked chromebook again it can be dones via the following steps:
+
+- install chromeos on it again via recovery image and enable the developer mode if not done yet
+- in the developer mode as root set the gbb flags back to 0x0 (see above)
+- flashrom --wp-disable (if --wp-enable was required, otherwise it might give an error and not be required)
+- the following commands will have to be issued via suzyqable (see above again)
+- ccd testlab disable
+- ccd reset
+- wp true atboot
+- wp true
+- ccd lock
+- reboot and leave dev mode
+- the chromebook should be a normal and regular chromebook as before
 
 ## some advanced hints for cr50/suzyqable enabled chromebooks
 
