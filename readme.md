@@ -224,7 +224,7 @@ the following are just some hints about some extra things possible with chromebo
 
 ## different boot options: u-boot, kpart
 
-there are two boot strategies used in the arm chromebook bootable images: chainloaded u-boot and native chromeos kpart kernels. actually there is the third options to install an self built low level libreboot or coreboot bootloader, but this options is quite complicated, risky and not supported for many arm chromebooks and thus not used and discussed here.
+there are two boot strategies used in the arm chromebook bootable images: chainloaded u-boot and native chromeos kpart kernels. actually there is the third options to install a self built low level libreboot or coreboot bootloader, but this options is quite complicated, risky and not supported for many arm chromebooks and thus not used and discussed here.
 
 booting via chainloaded u-boot is used by images for the 32bit armv7l chromebooks. here the low level bootloader is loading u-boot (another very common bootloader for arm systems) instead of the linux kernel and u-boot then will load the actual kernel. the advantage of this setup is that it is possible to create boot menus for selecting different kernels etc.
 
