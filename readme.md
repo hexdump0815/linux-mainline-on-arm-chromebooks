@@ -259,7 +259,7 @@ some usefule links regarding those topics:
 - a lot of information about chromeos versions, recovery images etc. for chromebooks by type: https://cros.tech/
 - chromeos update tracker: https://www.flagthis.com/updates
 - how long a certain chromebook will receive chromeos updates: https://support.google.com/chrome/a/answer/6220366
-- find out liunx kernel version on a certain chromebook and chromeos version: https://github.com/jay0lee/chromeos-update-directory and https://www.reddit.com/r/chromeos/comments/w38h7i/source_code_defining_kernel_version_by/
+- find out linux kernel version on a certain chromebook and chromeos version: https://github.com/jay0lee/chromeos-update-directory and https://www.reddit.com/r/chromeos/comments/w38h7i/source_code_defining_kernel_version_by/
 - how to build your own suzyqable: https://www.youtube.com/watch?v=WGsyXlgSxFk and https://chromium.googlesource.com/chromiumos/third_party/hdctools/+/HEAD/docs/ccd.md#making-your-own-suzyq
 - suzyqable alternative to buy in case this is preferred over building your own: https://github.com/ChocolateLoverRaj/gsc-debug-board (not verified myself, but someone else reported those devices working on irc: https://oftc.irclog.whitequark.org/aarch64-laptops/2023-11-13#32665252 - update: i ordered such a device and can confirm as well, that they are working as expected - some details and extra info can be found here: https://github.com/ChocolateLoverRaj/gsc-debug-board/issues/1)
 
